@@ -26,7 +26,7 @@
       <a class="navbar-brand" href="#" id="home"><i><b>Here's My Story</b></i></a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#" id="home">Home</a></li>
+      <li ><a href="#" id="home">Home</a></li>
       <li><a href="#" id="stories">Stories</a></li>
      <li><a href="#" id="example">About</a></li>
     </ul>
@@ -80,6 +80,33 @@
         });
         });
 
+  $("#logo").click(function(e){
+
+      e.preventDefault();
+
+      window.location ="/";
+    });
+
+       $("#home").click(function(e){
+
+      e.preventDefault();
+
+      window.location ="/";
+    });
+
+    $("#example").click(function(e){
+
+      e.preventDefault();
+
+      window.location ="/about";
+    });
+
+      $("#stories").click(function(e){
+
+      e.preventDefault();
+
+      window.location ="/stories";
+    });
     
 
 </script>
