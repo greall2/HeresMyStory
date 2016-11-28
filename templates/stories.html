@@ -4,7 +4,9 @@
  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stories</title>
+    <title>Here's My Story App</title>
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo3.png') }}"/>
 
    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -12,18 +14,18 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#" id="logo"><i><b>Here's My Story</b></i></a>
+      <a class="navbar-brand" href="#" id="logo"><img src="{{ url_for('static', filename='logo.png') }}"></a>
     </div>
     <ul class="nav navbar-nav">
-      <li ><a href="#" id="home">Home</a></li>
-      <li><a href="#" id="stories">Stories</a></li>
-     <li><a href="#" id="example">About</a></li>
+      <li ><a href="#" id="home" style="color: red">Home</a></li>
+      <li><a href="#" id="stories" style="color: red">Stories</a></li>
+     <li><a href="#" id="example" style="color: red">About</a></li>
     </ul>
-    <form class="navbar-form navbar-left">
+    <form class="navbar-form navbar-right">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search">
         <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
+          <button class="btn btn-danger" type="submit">
             <i class="glyphicon glyphicon-search"></i>
           </button>
         </div>
@@ -33,7 +35,27 @@
 </nav>
 
 
-<h1> Stories Page</h1>
+  <center>
+    <h3 style="color: red">
+     <i>
+        All Stories
+      </i>
+    </h3>
+    <div></div>
+   
+    <form>
+      <div class="form-group">
+      <label for="serveroutput"></label>
+      <textarea type="text" style="height: 200px" class="form-control" id="serveroutput" disabled>
+      </textarea>
+      </div>
+    </form>
+
+
+
+  </center>
+
+
 
 
 
@@ -43,6 +65,8 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
 
 <script>
+
+
    $("#logo").click(function(e){
 
       e.preventDefault();

@@ -7,6 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Here's My Story App</title>
 
+
+   <link rel="shortcut icon" href="{{ url_for('static', filename='logo3.png') }}"/>
+   
     <!-- Bootstrap -->
    <!-- Latest compiled and minified CSS -->
 
@@ -19,22 +22,22 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body >
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#" id="home"><i><b>Here's My Story</b></i></a>
+      <a class="navbar-brand" href="#" id="home"><img src="{{ url_for('static', filename='logo.png') }}"></a>
     </div>
     <ul class="nav navbar-nav">
-      <li ><a href="#" id="home">Home</a></li>
-      <li><a href="#" id="stories">Stories</a></li>
-     <li><a href="#" id="example">About</a></li>
+      <li ><a href="#" id="home" style="color: red">Home</a></li>
+      <li><a href="#" id="stories" style="color: red">Stories</a></li>
+     <li><a href="#" id="example" style="color: red">About</a></li>
     </ul>
-    <form class="navbar-form navbar-left">
+    <form class="navbar-form navbar-right">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search">
         <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
+          <button class="btn btn-danger" type="submit">
             <i class="glyphicon glyphicon-search"></i>
           </button>
         </div>
@@ -44,24 +47,24 @@
 </nav>
 
     <form action="/postStroy" method="GET">
-    <div class="form-group">
-    <label for="story">Tell us your Story Here..</label>
-    <textarea type="text" style = "height: 200px" class="form-control" id="story"></textarea>
-    </div>
-    <button type="submit" id="submit" class="btn btn-primary">
-    Submit
-    </button>
+      <div class="form-group">
+       <label for="story">Tell us your Story Here..</label>
+         <textarea type="text" style = "height: 200px" class="form-control" id="story"></textarea>
+      </div>
+       <button type="submit" id="submit" class="btn btn-danger" style="color:black"><b>
+        Submit</b>
+      </button>
     </form>
 
 <div></div>
 <div></div>
 
     <form>
-    <div class="form-group">
-    <label for="serveroutput">Your Story</label>
-    <textarea type="text" style="height: 200px" class="form-control" id="serveroutput" disabled>
-    </textarea>
-    </div>
+      <div class="form-group">
+        <label for="serveroutput">Your Story</label>
+          <textarea type="text" style="height: 200px" class="form-control" id="serveroutput" disabled>
+          </textarea>
+      </div>
     </form>
 
     
