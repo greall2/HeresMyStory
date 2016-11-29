@@ -2,16 +2,18 @@ import couchdb
 import json
 from flask import Flask, render_template
 from flask import request
+import time
 
 import flask as fl
 
 app = fl.Flask(__name__)
 
+# Adapted from https://pythonhosted.org/CouchDB/getting-started.html
 couch = couchdb.Server("http://127.0.0.1:5984/")
 
 #db = couch.create('test')
 
-db = couch['test']
+db = couch['test'] # existing Database
 
 
 @app.route("/")
@@ -22,9 +24,11 @@ def route():
 @app.route('/postStory', methods=['GET','POST'])
 def fname():
 	story = fl.request.values["story"]
-	#return 'Your name is '  + name
 	string = 'Your Post: ' + story
-	doc = {"story": story}
+	
+	#Time and Date adapted from https://www.cyberciti.biz/faq/howto-get-current-date-time-in-python/
+	currDate = time.strftime("%c")
+	doc = {"story": story, "Date": currDate}
 	db.save(doc)
 	return string
 

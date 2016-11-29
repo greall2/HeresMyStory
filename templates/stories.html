@@ -37,11 +37,11 @@
 
 
   <center>
-    <h3 style="color: red">
-     <i>
+    <h2 style="color: red">
+     <i><b>
         All Stories
-      </i>
-    </h3>
+      </b> </i>
+    </h2>
     <div></div>
 
     <!-- Adapted from https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates -->
@@ -50,8 +50,20 @@
 
     {% for s in storys %} 
     
-    <h1>{{ s.story }}</h1>
-    
+  
+      <div class="card card-outline-success text-xs-center">
+      <div class="card-block">
+       <blockquote class="card-blockquote">
+<!--  <ul class="list-group list-group-flush">-->
+   <li class="list-group-item">{{ s.story }} </li>
+ <!--  </ul>-->
+ <footer> {{ s.Date }}</footer>
+
+   </blockquote>
+</div>
+</div>
+
+
     {% endfor %}
 
   {% endif %}
