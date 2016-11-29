@@ -24,8 +24,8 @@ def route():
 @app.route('/postStory', methods=['GET','POST'])
 def fname():
 	story = fl.request.values["story"]
-	string = 'Your Post: ' + story
-	
+	string = 'Your Post has been added to Stories!' 
+
 	#Time and Date adapted from https://www.cyberciti.biz/faq/howto-get-current-date-time-in-python/
 	currDate = time.strftime("%c")
 	doc = {"story": story, "Date": currDate}
@@ -42,10 +42,10 @@ def about():
 def stories():
 	rows = db.view('_all_docs', include_docs = True)
 	docs = [row.doc for row in rows]
-	test = json.dumps((docs),indent = 2)
-	tester = json.loads(test)
-	tester.reverse()
-	return render_template("stories.html", storys = tester)
+	post = json.dumps((docs),indent = 2)
+	poster = json.loads(post)
+	poster.reverse()
+	return render_template("stories.html", storys = poster)
 
 
 if __name__ == "__main__":

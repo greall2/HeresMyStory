@@ -46,6 +46,17 @@
   </div>
 </nav>
 
+
+<center>
+<h4>
+   <b> <i>
+        Think you have Story to make us cry, laugh, reflect or even trick us?
+        <div> </div> 
+        Share it here with the world! 
+    </i> </b>
+</h4>
+</center>
+
     <form action="/postStroy" method="GET">
       <div class="form-group">
        <label for="story">Tell us your Story Here..</label>
@@ -59,14 +70,15 @@
 <div></div>
 <div></div>
 
-    <form>
-      <div class="form-group">
-        <label for="serveroutput">Your Story</label>
-          <textarea type="text" style="height: 200px" class="form-control" id="serveroutput" disabled>
-          </textarea>
-      </div>
-    </form>
+    <center>
 
+      <div class="card-block" id= "status">
+       
+      {{ string }}  
+      
+    </div>
+    
+  </center>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -79,7 +91,7 @@
          data = {story: $("#story").val()}
         $.post("/postStory", data, function(resbody)
          {
-           $("#serveroutput").text(resbody);
+           $("#status").text(resbody);
         });
         });
 
