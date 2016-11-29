@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	  <title>Here's My Story App</title>
+	  <title>Here's My Story</title>
 
+	  <!-- Logo created using logomkr.com-->
 	  <link rel="shortcut icon" href="{{ url_for('static', filename='logo3.png') }}"/>
 
 	<!--  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"> -->
@@ -18,7 +19,7 @@
     <ul class="nav navbar-nav">
       <li><a href="#" id="home" style="color: red">Home</a></li>
       <li><a href="#" id="stories" style="color: red">Stories</a></li>
-     <li><a href="#" id="example" style="color: red">About</a></li>
+     <li><a href="#" id="about" style="color: red">About</a></li>
     </ul>
     <form class="navbar-form navbar-right">
       <div class="input-group">
@@ -82,7 +83,7 @@
       window.location ="/";
     });
 
-    $("#example").click(function(e){
+    $("#about").click(function(e){
 
       e.preventDefault();
 
