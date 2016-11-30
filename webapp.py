@@ -13,7 +13,7 @@ couch = couchdb.Server("http://127.0.0.1:5984/")
 
 #db = couch.create('test')
 
-db = couch['test'] # existing Database
+db = couch['stories'] # existing Database
 
 
 @app.route("/")
