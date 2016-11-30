@@ -11,8 +11,7 @@ app = fl.Flask(__name__)
 # Adapted from https://pythonhosted.org/CouchDB/getting-started.html
 couch = couchdb.Server("http://127.0.0.1:5984/")
 
-#db = couch.create('test')
-
+#calling an existimg database
 db = couch['stories'] # existing Database
 
 
@@ -22,7 +21,7 @@ def route():
 	
 
 @app.route('/postStory', methods=['GET','POST'])
-def fname():
+def story():
 	story = fl.request.values["story"]
 	string = 'Your Post has been added to Stories!' 
 
@@ -33,16 +32,17 @@ def fname():
 	return string
 
 
+#routing to the About page
 @app.route("/about")
 def about():
 	return render_template("about.html")
 
-
+#routing to the Stories Page
 @app.route("/stories")
 def stories():
 	rows = db.view('_all_docs', include_docs = True)
 	docs = [row.doc for row in rows]
-	post = json.dumps((docs),indent = 2)
+	post = json.dumps((docs))
 	poster = json.loads(post)
 	poster.reverse()
 	return render_template("stories.html", storys = poster)
