@@ -1,4 +1,5 @@
-
+#Ríona Greally - G00325504
+#3rd Yr Software Development, GMIT
 import couchdb
 import time
 

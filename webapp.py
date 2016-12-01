@@ -1,3 +1,5 @@
+#Ríona Greally - G00325504
+#3rd Yr Software Development, GMIT
 import couchdb
 import json
 from flask import Flask, render_template
@@ -14,7 +16,7 @@ couch = couchdb.Server("http://127.0.0.1:5984/")
 #calling an existimg database
 db = couch['stories'] # existing Database
 
-
+#Routing adapted from http://flask.pocoo.org/docs/0.11/quickstart/#routing
 @app.route("/")
 def route():
 	return render_template("index.html")
@@ -40,6 +42,7 @@ def about():
 #routing to the Stories Page
 @app.route("/stories")
 def stories():
+	# Adapted from http://stackoverflow.com/questions/1640054/multiple-couchdb-document-fetch-with-couchdb-python
 	rows = db.view('_all_docs', include_docs = True)
 	docs = [row.doc for row in rows]
 	post = json.dumps((docs))
